@@ -3,129 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private Chat Request</title>
+<title>Chat & Earn zimbabwe</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
 body{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyGkAbhdD4EPvNEwVkExJGI3t1HidcKhb1vJ3k_813Y-Bo1J6k80nrkFZqmSjYqoju16r5LhMK5U1qIgf_5ObHWICre-z0VB15o_UjsEET6p8icMiDeiDrYx5aw-Cl_25mhcK1DZQkMr2x2yxWvKsyyUVcP_1lHVD8cgUQhcX6Xvl-G_VVJUbn_7Qo2-k/s931/a40a99017386a4618e77eff5d54c790c.jpg") center/cover no-repeat;
-position:relative;
-padding:20px;
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(4px);
+margin:0;
+font-family:Arial, sans-serif;
+background:#0d0d0d;
+color:#fff;
 }
 
 .container{
-position:relative;
-z-index:2;
-color:#fff;
-text-align:center;
 max-width:400px;
-width:100%;
+margin:auto;
+padding:20px;
 }
 
-/* HEADLINE */
-h1{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.sub{
-font-size:15px;
-opacity:0.9;
-margin-bottom:18px;
-}
-
-/* CHAT BOX STYLE */
-.chat-box{
-background:rgba(255,255,255,0.08);
-padding:12px;
-border-radius:10px;
-text-align:left;
-margin-bottom:18px;
-font-size:14px;
-line-height:1.4;
-}
-
-.chat-box b{
-color:#ff4d88;
-}
-
-/* LIVE PROOF */
-.live{
-font-size:13px;
-margin-bottom:18px;
-color:#00ff88;
-}
-
-/* QUESTION */
-.question{
-font-size:16px;
-margin-bottom:12px;
-}
-
-/* BUTTONS */
-.buttons{
+.header{
 display:flex;
-flex-direction:column;
-gap:12px;
+align-items:center;
+margin-bottom:20px;
 }
 
-button{
-padding:15px;
-font-size:16px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
+.logo{
+width:45px;
+height:45px;
+border-radius:10px;
+background:#ffcc00;
+margin-right:10px;
+}
+
+.title{
+font-size:18px;
 font-weight:bold;
 }
 
-.btn1{
-background:#222;
-color:#fff;
-border:1px solid #555;
+.card{
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+text-align:center;
 }
 
-.btn2{
-background:#ff0055;
-color:#fff;
-animation:pulse 2s infinite;
+h1{
+font-size:20px;
+margin-bottom:10px;
 }
 
-button:hover{
-transform:scale(1.05);
+p{
+font-size:14px;
+color:#ccc;
 }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
+/* INPUT */
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+outline:none;
+font-size:14px;
 }
 
-/* NOTE */
-.note{
-font-size:12px;
-opacity:0.7;
+/* BUTTON */
+button{
+width:100%;
+padding:14px;
 margin-top:15px;
+border:none;
+border-radius:10px;
+background:#ffcc00;
+color:#000;
+font-weight:bold;
+font-size:15px;
+cursor:pointer;
+}
+
+button:disabled{
+opacity:0.6;
+cursor:not-allowed;
+}
+
+.trust{
+margin-top:15px;
+font-size:12px;
+color:#aaa;
+}
+
+.live{
+margin-top:15px;
+font-size:13px;
+color:#00ffcc;
+line-height:1.6;
+}
+
+.error{
+color:#ff4d4d;
+font-size:12px;
+margin-top:8px;
+display:none;
 }
 
 </style>
@@ -133,451 +111,87 @@ margin-top:15px;
 
 <body>
 
-<div class="overlay"></div>
-
 <div class="container">
 
-<h1>💬 Nova mensagem recebida</h1>
-
-<div class="sub">
-Alguém quer falar contigo agora...
+<div class="header">
+<div class="logo"></div>
+<div class="title">Chat & Earn Zimbabwe</div>
 </div>
 
-<div class="chat-box">
-<b>Anna:</b> hey... i'm really bored 😔<br><br>
-i just need someone to talk to...<br>
-i can even <b>pay you for your time</b> if you stay with me...
+<div class="card">
+
+<h1>Start Chatting & Earn 💬</h1>
+
+<p>
+Sign up to chat with international users and receive rewards directly to your EcoCash account.
+</p>
+
+<input type="text" id="name" placeholder="Enter your name">
+<input type="text" id="age" placeholder="Enter your age">
+
+<div class="error" id="error">Please enter a valid name and age (15+)</div>
+
+<button onclick="startNow()">CREATE ACCOUNT</button>
+
+<div class="trust">
+✔ No experience needed <br>
+✔ Works on any phone <br>
+✔ Payments via MTN MoMo
 </div>
 
 <div class="live">
-🔥 <span id="count">1,247</span> pessoas estão a tentar responder
+⚡ 12 chatting spots left today <br>
+<span id="liveText">Ama just earned GHS 320</span>
 </div>
 
-<div class="question">
-Queres responder à Anna agora?
-</div>
-
-<div class="buttons">
-<button class="btn1" onclick="goLink()">Ignorar</button>
-<button class="btn2" onclick="goLink()">Responder agora 💬</button>
-</div>
-
-<div class="note">
-✔ Resposta imediata • ✔ Chat privado
 </div>
 
 </div>
 
 <script>
 
-/* LIVE COUNTER */
-let count = 1247;
-let direction = 1;
+// 🔥 LIVE ROTATION
+const messages = [
+"Ama just earned GHS 320",
+"Kofi received payment today",
+"Kwame just made GHS 210",
+"Akosua earned GHS 150 today",
+"Yaw just joined and got paid"
+];
 
-setInterval(() => {
+let index = 0;
 
-if(Math.random() < 0.3) direction *= -1;
+function updateLive(){
+index = (index + 1) % messages.length;
+document.getElementById("liveText").innerText = messages[index];
+}
 
-count += direction * (Math.random()*3 + 1);
+setInterval(updateLive, 2500);
 
-if(count > 2000) direction = -1;
-if(count < 800) direction = 1;
 
-document.getElementById("count").innerText = Math.floor(count).toLocaleString();
+// 🚀 VALIDATION + REDIRECT
+function startNow(){
 
-}, 1200);
+let name = document.getElementById("name").value.trim();
+let age = document.getElementById("age").value.trim();
 
-/* REDIRECT */
-function goLink(){
+if(name === "" || age === "" || isNaN(age) || age < 14){
+document.getElementById("error").style.display = "block";
+return;
+}
+
+document.getElementById("error").style.display = "none";
+
+const btn = document.querySelector("button");
+btn.innerText = "Creating account...";
+btn.disabled = true;
+
+setTimeout(function(){
 window.location.href="https://ln.run/personal";
+}, 1200);
 }
 
 </script>
 
 </body>
 </html>
-<!--
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encontros Secretos</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    background: #0d0108;
-    color:#fff;
-    font-family:'Outfit',sans-serif;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    overflow-x:hidden;
-  }
-
-  /* animated background grid - subtle pink tint */
-  body::before {
-    content:'';
-    position:fixed; inset:0;
-    background:
-      linear-gradient(rgba(238,9,121,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(238,9,121,.04) 1px, transparent 1px);
-    background-size:40px 40px;
-    pointer-events:none;
-    z-index:0;
-  }
-
-  .page {
-    position:relative; z-index:1;
-    width:100%; max-width:420px;
-    padding:24px 14px 130px;
-    display:flex; flex-direction:column;
-    align-items:center; gap:12px;
-  }
-
-  /* ── TOP BADGE ── */
-  .top-badge {
-    background: linear-gradient(135deg,#ee0979,#ff6a00);
-    border-radius:30px;
-    padding:5px 16px;
-    font-size:.72rem;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    box-shadow:0 0 18px rgba(238,9,121,.4);
-    animation:badge-pulse 2s ease-in-out infinite;
-  }
-  @keyframes badge-pulse{
-    0%,100%{box-shadow:0 0 18px rgba(238,9,121,.4)}
-    50%    {box-shadow:0 0 34px rgba(238,9,121,.75)}
-  }
-
-  /* ── Heading ── */
-  .heading { text-align:center; line-height:1.08; }
-  .heading h1 {
-    font-size:clamp(2rem,8.5vw,2.9rem);
-    font-weight:900;
-    background: linear-gradient(135deg,#fff 40%,#ff99cc);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-  }
-  .heading .accent { 
-    background: linear-gradient(135deg,#ee0979,#ff6a00);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-  }
-  .heading .sub {
-    font-size:clamp(1rem,4.5vw,1.3rem);
-    font-weight:600;
-    color:#d0c0cc;
-    margin-top:5px;
-  }
-
-  /* ── Live Counter Box ── */
-  .live-box {
-    width:100%;
-    border:1.5px solid #3a0d24;
-    border-radius:14px;
-    background:linear-gradient(135deg,#1a0510,#250818);
-    padding:12px 16px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .live-left { display:flex; align-items:center; gap:10px; }
-  .live-badge {
-    background:linear-gradient(135deg,#ee0979,#ff0055);
-    color:#fff; font-size:.66rem; font-weight:800;
-    padding:3px 8px; border-radius:4px; letter-spacing:.5px;
-  }
-  .live-label { color:#b58aa3; font-size:.8rem; }
-  .bars { display:flex; align-items:flex-end; gap:3px; height:16px; margin-top:3px; }
-  .bar { width:4px; background:#ee0979; border-radius:2px; animation:pulse-bar 1.2s ease-in-out infinite; }
-  .bar:nth-child(1){height:6px;animation-delay:0s}
-  .bar:nth-child(2){height:12px;animation-delay:.2s}
-  .bar:nth-child(3){height:8px;animation-delay:.4s}
-  .bar:nth-child(4){height:15px;animation-delay:.1s}
-  .bar:nth-child(5){height:10px;animation-delay:.3s}
-  @keyframes pulse-bar{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.45;transform:scaleY(.55)}}
-  .live-count { text-align:right; }
-  .live-count .number {
-    font-size:1.9rem; font-weight:900;
-    background:linear-gradient(135deg,#ff007b,#ee0979);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    line-height:1; display:inline-block;
-    transition:transform .15s cubic-bezier(.34,1.56,.64,1);
-  }
-  .live-count .number.flash { transform:scale(1.18); filter:brightness(1.4); }
-  .live-count .members { font-size:.6rem; color:#855c74; letter-spacing:1px; text-transform:uppercase; }
-
-  /* ── Match Ticker Box ── */
-  .match-box {
-    width:100%;
-    background:linear-gradient(135deg,#110108,#1f0814);
-    border:1px solid #3a0d24;
-    border-radius:14px;
-    padding:12px 18px;
-    text-align:center;
-    overflow:hidden;
-  }
-  .match-slide { transition:opacity .35s ease,transform .35s ease; opacity:1; transform:translateY(0); }
-  .match-slide.out { opacity:0; transform:translateY(-12px); }
-  .match-slide.in  { opacity:0; transform:translateY(12px); }
-  .match-box .label { font-size:.85rem; color:#b58aa3; }
-  .match-box .status {
-    font-size:1.6rem; font-weight:800;
-    background:linear-gradient(135deg,#fff,#ff99cc);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    margin-top:2px;
-  }
-
-  /* ── Online dot ── */
-  .online-label {
-    display:flex; align-items:center; gap:7px;
-    font-size:.8rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#d0c0cc;
-  }
-  .dot {
-    width:9px; height:9px;
-    background:linear-gradient(135deg,#00ff88,#00cc77);
-    border-radius:50%;
-    box-shadow:0 0 8px #00ff88;
-    animation:blink 1.5s ease-in-out infinite;
-  }
-  @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-
-  /* ── Avatars ── */
-  .avatars {
-    display:flex; flex-direction:row;
-    justify-content:center; align-items:center;
-    gap:30px; width:100%;
-  }
-
-  .avatar-wrap {
-    position:relative; width:110px; height:110px;
-    flex-shrink:0; cursor:pointer;
-    transform-origin:center bottom;
-    animation:spring-idle 2.8s ease-in-out infinite;
-  }
-  .avatar-wrap:nth-child(1){ animation-delay:0s; }
-  .avatar-wrap:nth-child(2){ animation-delay:.55s; }
-
-  @keyframes spring-idle {
-    0%   { transform:translateY(0)    scale(1); }
-    15%  { transform:translateY(-9px) scale(1.04,.97); }
-    30%  { transform:translateY(3px)  scale(.97,1.03); }
-    45%  { transform:translateY(-5px) scale(1.02,.98); }
-    60%  { transform:translateY(1px)  scale(.99,1.01); }
-    75%  { transform:translateY(-2px) scale(1.01,.99); }
-    90%  { transform:translateY(0)    scale(1); }
-    100% { transform:translateY(0)    scale(1); }
-  }
-  .avatar-wrap.popped {
-    animation:spring-pop .55s cubic-bezier(.34,1.8,.64,1) forwards;
-  }
-
-  /* pink spinning ring */
-  .avatar-ring {
-    position:absolute; inset:-4px; border-radius:50%;
-    background:conic-gradient(#ee0979 0deg,#ff6a00 180deg,#1a0510 180deg,#1a0510 360deg);
-    animation:spin-ring 2.5s linear infinite;
-    z-index:0;
-  }
-  @keyframes spin-ring{ to{transform:rotate(360deg);} }
-  .avatar-inner {
-    position:absolute; inset:3px; border-radius:50%; overflow:hidden;
-    border:2px solid #0d0108; z-index:1; background:#250818;
-  }
-  .avatar-inner img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
-  .avatar-live {
-    position:absolute; bottom:2px; left:50%; transform:translateX(-50%);
-    z-index:2; background:rgba(0,0,0,.88);
-    border:1.5px solid #ee0979;
-    border-radius:20px; padding:2px 8px;
-    display:flex; align-items:center; gap:4px;
-    font-size:.57rem; font-weight:700; color:#ee0979; white-space:nowrap;
-  }
-  .avatar-live-dot {
-    width:6px; height:6px;
-    background:#ee0979; border-radius:50%;
-    box-shadow:0 0 5px #ee0979;
-    animation:blink 1.5s ease-in-out infinite;
-  }
-
-  /* ── Gender question ── */
-  .question {
-    font-size:clamp(1.3rem,5.2vw,1.8rem);
-    font-weight:800; text-align:center;
-    background:linear-gradient(135deg,#fff 50%,#ff99cc);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-  }
-
-  .gender-row { width:100%; display:flex; gap:10px; }
-  .gender-btn {
-    flex:1;
-    background:#111;
-    border:1.5px solid #3a0d24;
-    border-radius:12px;
-    color:#b58aa3;
-    font-family:'Outfit',sans-serif;
-    font-size:1rem; font-weight:700;
-    padding:14px; cursor:pointer;
-    transition:all .2s;
-  }
-  .gender-btn:hover,.gender-btn.active {
-    background:linear-gradient(135deg,#250818,#3a0d24);
-    border-color:#ee0979;
-    color:#fff;
-  }
-
-  /* ── Floating CTA ── */
-  .cta-wrap {
-    position:fixed; bottom:18px; left:50%; transform:translateX(-50%);
-    width:calc(100% - 28px); max-width:392px; z-index:999;
-    text-decoration:none; display:block;
-  }
-  .cta-float {
-    width:100%;
-    background:linear-gradient(135deg,#ee0979,#ff6a00,#ee0979);
-    background-size:200% auto;
-    border:none; border-radius:14px;
-    color:#fff; font-family:'Outfit',sans-serif;
-    font-size:1.1rem; font-weight:900;
-    letter-spacing:1px; text-transform:uppercase;
-    padding:20px; cursor:pointer;
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    animation:cta-shine 1.4s ease-in-out infinite;
-  }
-  @keyframes cta-shine {
-    0%   { background-position:0% center;   box-shadow:0 0 20px rgba(238,9,121,.5); }
-    50%  { background-position:100% center; box-shadow:0 0 45px rgba(238,9,121,.9); }
-    100% { background-position:0% center;   box-shadow:0 0 20px rgba(238,9,121,.5); }
-  }
-  .cta-float:active { transform:scale(.97); }
-</style>
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-</head>
-<body>
-<div class="page">
-
-  <div class="top-badge">💖 Solteiros perto de si</div>
-
-  <div class="heading">
-    <h1>Privado<br><span class="accent">Comunidade de Encontros.</span></h1>
-    <div class="sub">Perfis Verificados &amp; Solteiros de verdade</div>
-  </div>
-
-  <div class="live-box">
-    <div class="live-left">
-      <span class="live-badge">AO VIVO</span>
-      <div>
-        <div class="live-label">A navegar perfis</div>
-        <div class="bars">
-          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-          <div class="bar"></div><div class="bar"></div>
-        </div>
-      </div>
-    </div>
-    <div class="live-count">
-      <div class="number" id="memberCount">1,842</div>
-      <div class="members">Online agora</div>
-    </div>
-  </div>
-
-  <div class="match-box">
-    <div class="match-slide" id="matchSlide">
-      <div class="label" id="matchLabel">Sarah L. acabou de combinar com Marcus</div>
-      <div class="status" id="matchStatus">Nova conexão! ✨</div>
-    </div>
-  </div>
-
-  <div class="online-label"><span class="dot"></span> Membros online</div>
-
-  <div class="avatars">
-    <div class="avatar-wrap" id="av1">
-      <div class="avatar-ring"></div>
-      <div class="avatar-inner"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVm78A3Hpiu5e41ZnEw64AoffQ-T0JhElBisR5Y3TvsFlq8CRy5UqSFbEdn1j7fzVsG2B7eAwBnrE9gYsUMDpfJOT54E3Z5bz9649aXB-BeXq3D-bMl62Djk5A0UKEd2XyTpuDggJw1ElNUy_kseSwx649HLEEfl1RsqwWNSZygP3Ywyt0USPAup9CWyjy/s990/download%20(28).jpeg" alt="Match 1"></div>
-      <div class="avatar-live"><span class="avatar-live-dot"></span>AO VIVO</div>
-    </div>
-    <div class="avatar-wrap" id="av2">
-      <div class="avatar-ring"></div>
-      <div class="avatar-inner"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5p9GopurEEnQr76IlvKwT4bPzhlOeNrVEboqDHLN0OKAYu2vkBnAPWbM7KsctHzJMdiM6qzMQVZJ0Rz6bwMTyzhFWKqVnF-e7rjtkw6r85Qnr_u1hWYWkrF1XY1JbgL-SJnMZq6SkbBL_dU5IFRRVJY2MzQMHEAqFmH10BxMO_AILTswuwHgaR3GCE-Bh/s1307/with%20big%20breast.jpeg" alt="Match 2"></div>
-      <div class="avatar-live"><span class="avatar-live-dot"></span>AO VIVO</div>
-    </div>
-  </div>
-
-  <div class="question">Quem és<br>À procura de conhecer?</div>
-  <div class="gender-row">
-    <button class="gender-btn" onclick="selectGender(this)">Sou homem.</button>
-    <button class="gender-btn" onclick="selectGender(this)">Eu sou mulher.</button>
-  </div>
-
-</div>
-
-<a class="cta-wrap" href="https://ln.run/personal">
-  <button class="cta-float">🔥 COMEÇAR A CONVERSAR</button>
-</a>
-
-<script>
-  /* ── Live member count ── */
-  let memberCount = 1842;
-let direction = 1; // 1 = up, -1 = down
-const countEl = document.getElementById('memberCount');
-
-function updateCount() {
-  // randomly switch direction sometimes
-  if (Math.random() < 0.3) {
-    direction *= -1;
-  }
-
-  const change = Math.floor(Math.random() * 4) + 1;
-  memberCount += change * direction;
-
-  // keep within range
-  if (memberCount >= 2500) direction = -1;
-  if (memberCount <= 1500) direction = 1;
-
-  countEl.classList.add('flash');
-  countEl.textContent = memberCount.toLocaleString();
-
-  setTimeout(() => {
-    countEl.classList.remove('flash');
-  }, 200);
-}
-
-// smooth continuous loop
-setInterval(updateCount, 1200);
-
-  /* ── Match ticker ── */
-  const namesMale   = ['Mike','James','Tyler','Jordan','Kevin','Marcus','Andre','Jason','Aaron','Zach'];
-  const namesFemale = ['Sarah','Emily','Jessica','Chloe','Ashley','Bella','Megan','Taylor','Nicole','Riley'];
-  const inits       = ['A','B','C','D','F','G','H','K','L','M','P','R','S','T','W'];
-  
-  const slide    = document.getElementById('matchSlide');
-  const labelEl  = document.getElementById('matchLabel');
-  
-  function cycleMatch(){
-  slide.classList.add('out');
-
-  setTimeout(()=>{
-    const f = namesFemale[Math.floor(Math.random()*namesFemale.length)];
-    const m = namesMale[Math.floor(Math.random()*namesMale.length)];
-    const i = inits[Math.floor(Math.random()*inits.length)];
-
-    labelEl.textContent = f + ' ' + i + '. acabou de combinar com ' + m;
-
-    slide.classList.remove('out');
-    slide.classList.add('in');
-
-    setTimeout(()=>{
-      slide.classList.remove('in');
-    }, 300);
-
-  }, 300);
-}
-
-setInterval(cycleMatch, 3000);
-</body></html>
--->
