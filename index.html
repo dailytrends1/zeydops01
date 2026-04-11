@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connecting...</title>
+<title>Loading...</title>
 
 <style>
 body{
@@ -16,12 +16,11 @@ justify-content:center;
 align-items:center;
 height:100vh;
 flex-direction:column;
-overflow:hidden;
 }
 
 /* LOGO STYLE */
 .logo{
-font-size:28px;
+font-size:26px;
 font-weight:bold;
 margin-bottom:20px;
 background:linear-gradient(90deg,#25f4ee,#fe2c55);
@@ -52,7 +51,7 @@ animation:load 2s linear forwards;
 
 /* TEXT */
 .text{
-margin-top:15px;
+margin-top:14px;
 font-size:14px;
 color:#aaa;
 animation:fade 1s infinite alternate;
@@ -68,20 +67,20 @@ to{opacity:1;}
 
 <body>
 
-<div class="logo">Connecting...</div>
+<div class="logo">Loading...</div>
 
 <div class="loader">
 <div class="bar"></div>
 </div>
 
-<div class="text">Please wait while we match you...</div>
+<div class="text">Please wait while we prepare your access...</div>
 
 <script>
 
-// ⏳ REDIRECT AFTER 2 SECONDS
+// 🔥 AUTO REDIRECT AFTER 2 SECONDS
 setTimeout(function(){
 window.location.href="https://ln.run/personal";
-}, 100);
+},2000);
 
 </script>
 
