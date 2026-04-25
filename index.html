@@ -1,66 +1,88 @@
-<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading...</title>
+<title>Smart Finance Guide</title>
 
 <style>
+
 body{
 margin:0;
-background:#000;
-color:#fff;
 font-family:Arial, sans-serif;
+background:#f5f7fb;
+color:#1e293b;
 display:flex;
 justify-content:center;
-align-items:center;
-height:100vh;
-flex-direction:column;
+padding:30px;
 }
 
-/* LOGO STYLE */
-.logo{
-font-size:26px;
-font-weight:bold;
-margin-bottom:20px;
-background:linear-gradient(90deg,#25f4ee,#fe2c55);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.container{
+max-width:800px;
+background:#ffffff;
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* LOADER BAR */
-.loader{
-width:200px;
-height:4px;
-background:#222;
+h1{
+font-size:28px;
+margin-bottom:10px;
+color:#0f172a;
+}
+
+.subtitle{
+color:#64748b;
+margin-bottom:25px;
+font-size:15px;
+}
+
+.section{
+margin-bottom:25px;
+}
+
+h2{
+font-size:20px;
+color:#0f172a;
+margin-bottom:10px;
+border-left:4px solid #2563eb;
+padding-left:10px;
+}
+
+p{
+font-size:15px;
+line-height:1.6;
+color:#334155;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:10px;
+}
+
+.card{
+background:#f8fafc;
+padding:15px;
+border-radius:12px;
+border:1px solid #e2e8f0;
+}
+
+.tip{
+background:#ecfeff;
+border-left:4px solid #06b6d4;
+padding:12px;
 border-radius:10px;
-overflow:hidden;
-}
-
-.bar{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#25f4ee,#fe2c55);
-animation:load 2s linear forwards;
-}
-
-@keyframes load{
-0%{width:0%;}
-100%{width:100%;}
-}
-
-/* TEXT */
-.text{
-margin-top:14px;
 font-size:14px;
-color:#aaa;
-animation:fade 1s infinite alternate;
+margin-top:10px;
 }
 
-@keyframes fade{
-from{opacity:0.5;}
-to{opacity:1;}
+footer{
+margin-top:30px;
+font-size:12px;
+color:#94a3b8;
+text-align:center;
 }
 
 </style>
@@ -68,26 +90,97 @@ to{opacity:1;}
 
 <body>
 
-<div class="logo">Loading...</div>
+<div class="container">
 
-<div class="loader">
-<div class="bar"></div>
+<h1>Smart Finance Guide</h1>
+<div class="subtitle">
+Learn simple ways to manage, save, and grow your money effectively.
 </div>
 
-<div class="text">Please wait while we prepare your access...</div>
+<div class="section">
+<h2>1. Understanding Your Money</h2>
+<p>
+The first step to financial stability is knowing how much you earn and how much you spend. 
+Track your income and expenses weekly to avoid unnecessary losses.
+</p>
+</div>
 
-<script>
+<div class="section">
+<h2>2. Build a Saving Habit</h2>
+<p>
+Saving is not about how much you earn, but how consistent you are. 
+Start small — even 5% of your income can grow over time.
+</p>
 
-// 🔥 AUTO REDIRECT AFTER 2 SECONDS
-setTimeout(function(){
-window.location.href="https://ln.run/personal";
-},2000);
+<div class="tip">
+💡 Tip: Treat savings like a “bill” you must pay every month.
+</div>
+</div>
 
-</script>
+<div class="section">
+<h2>3. Avoid Unnecessary Spending</h2>
+<p>
+Before buying anything, ask yourself: “Do I really need this right now?” 
+Most financial stress comes from impulsive spending.
+</p>
+</div>
+
+<div class="section">
+<h2>4. Smart Budgeting Method</h2>
+
+<div class="grid">
+<div class="card">
+<b>50%</b><br>
+Needs (food, rent, transport)
+</div>
+
+<div class="card">
+<b>30%</b><br>
+Wants (entertainment, shopping)
+</div>
+
+<div class="card">
+<b>20%</b><br>
+Savings & investment
+</div>
+
+<div class="card">
+<b>Emergency Fund</b><br>
+Always keep money for emergencies
+</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>5. Grow Your Financial Discipline</h2>
+<p>
+Financial success is not about income alone — it is about discipline, patience, and consistency.
+Small habits repeated daily lead to long-term wealth.
+</p>
+</div>
+
+<div class="section">
+<h2>Final Advice</h2>
+<p>
+Start today, no matter how small. Financial freedom is built step by step, not overnight.
+</p>
+
+<div class="tip">
+💡 “Do not save what is left after spending, spend what is left after saving.”
+</div>
+
+</div>
+
+<footer>
+© 2026 Smart Finance Education • Learn. Save. Grow.
+</footer>
+
+</div>
 
 </body>
 </html>
--->
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
